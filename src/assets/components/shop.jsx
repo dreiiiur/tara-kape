@@ -1,32 +1,35 @@
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useNavigate} from "react-router-dom";
+import { useState, useEffect } from "react";
 
-export default function Login() {
-    const navigate = useNavigate();
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+export default function Shop() {
+  const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [showPassword, setShowPassword] = useState(false);
+  const [count, setCount] = useState(1);
 
-    const togglePasswordVisibility = () => {
-        setShowPassword(!showPassword);
-    };
+  useEffect(() => {
+    document.title = `Quantity${count}`;
+     if (count >= 10) {
+      const button = document.getElementById("endCount");
+      if (button) {
+        button.disabled = true;
+      }
+    }
+    else {
+      const button = document.getElementById("endCount");
+      if (button) {
+        button.disabled = false;
+      }
+    }
+  }, [count]);
 
-    const loginButton = () => {
-        if (email === "admin@gmail.com" && password === "admin") {
-            navigate("/admin");
-        } else {
-            alert("Invalid email or password");
-        }
-    };
 
-    return (
-        <div
+  return (
+    <div
       className="min-h-screen flex flex-col overflow-y-hidden"
       style={{ overflowX: "hidden" }}
     >
@@ -76,10 +79,10 @@ export default function Login() {
                   </li>
                   <li>
                     <a
-                      onClick={() => navigate("/login")}
+                      onClick={() => navigate("/location")}
                       className="hover:text-orange-500 cursor-pointer"
                     >
-                      Login
+                      Location
                     </a>
                   </li>
                 </ul>
@@ -131,7 +134,7 @@ export default function Login() {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2}
+                strokeWidth="2"
                 d="M4 6h16M4 12h16M4 18h16"
               />
             </svg>
@@ -197,7 +200,7 @@ export default function Login() {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
+                    strokeWidth="2"
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
@@ -208,72 +211,27 @@ export default function Login() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-grow bg-gray-100 py-12 items-center">
-        <div className="container mx-auto px-4 justify-center">
-          <div className="bg-white p-6 rounded shadow-md max-w-lg mx-auto">
-            <h2 className="text-2xl text-green-800 font-bold mb-4 text-center">Login</h2>
-            <form className="space-y-6">
-              <div className="mb-4">
-                <label className="block text-green-800 font-bold mb-2" htmlFor="email">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  className="w-full p-2 border rounded"
-                  placeholder="example@gmail.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700 font-bold mb-2" htmlFor="password">
-                  Password
-                </label>
-                <input
-                  id="password"
-                  type={showPassword ? "text" : "password"}
-                  className="w-full p-2 border rounded"
-                  placeholder="********"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <button
-                  className="absolute top-0 right-0 mt-2 mr-2"
-                  onClick={togglePasswordVisibility}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-black"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-full" type="button" onClick={loginButton}>
-                Login
-              </button>
-            </form>
-
-            <div className="mt-4 text-center">
-              <p className="text-gray-600">
-                Don't have an account?{" "}
-                <a href="/register" className="text-green-600 hover:underline">
-                  Register
-                </a>
-              </p>
-            </div>
-          </div>
+      <div className="flex flex-col items-center space-y-4 p-4 bg-gray-100 rounded-md shadow-md">
+        <p className="text-lg font-semibold text-gray-700">Quantity <span className="font-bold text-green-600">{count}</span></p>
+        <div className="flex space-x-4">
+          <button 
+            onClick={() => setCount(count + 1)} 
+            className="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 font-bold"
+          id="endCount">
+            +
+          </button>
+          <button 
+            onClick={() => setCount(count - 1)} 
+            className="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 font-bold"
+          >
+            -
+          </button>
+         
         </div>
-      </main>
+      </div>
+
+      {/* Footer */}
     </div>
   );
 }
+

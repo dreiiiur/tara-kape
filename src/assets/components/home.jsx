@@ -19,12 +19,12 @@ export default function Home() {
       {/* Header */}
       <header className="shadow-md bg-white">
         <div className="container mx-auto flex justify-between items-center py-6 px-4">
-          <h1 className="text-4xl font-bold text-black">
+          <h1 className="text-4xl font-bold text-green-800">
             <span className="italic font-serif">Tara</span>{" "}
             <span className="text-green-600">Kape</span>
           </h1>
           <nav className="hidden md:block">
-            <div className="flex space-x-8 text-black">
+            <div className="flex space-x-8 text-green-800">
               {/* Desktop Navigation */}
               <div className="flex items-center space-x-8">
                 <ul className="flex space-x-8">
@@ -38,7 +38,7 @@ export default function Home() {
                   </li>
                   <li>
                     <a
-                      onClick={() => navigate("/")}
+                      onClick={() => navigate("/shop")}
                       className="hover:text-orange-500 cursor-pointer"
                     >
                       Shop
@@ -73,7 +73,7 @@ export default function Home() {
                   <div className="relative">
                     <input
                       type="search"
-                      className="w-full py-2 px-4 text-black bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                      className="w-full py-2 px-4 text-green-800 bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
                       placeholder="Search..."
                     />
                     <button
@@ -82,7 +82,7 @@ export default function Home() {
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-black"
+                        className="h-6 w-6 text-green-800"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -101,7 +101,7 @@ export default function Home() {
             </div>
           </nav>
           <button
-            className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded hidden md:block"
+            className="bg-green-800 hover:bg-green-700 text-white font-bold py-2 px-6 rounded hidden md:block"
             onClick={() => navigate("/login")}
           >
             Login
@@ -109,7 +109,7 @@ export default function Home() {
           <button className="md:hidden" onClick={toggleMenu}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-black"
+              className="h-6 w-6 text-green-800"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -127,7 +127,7 @@ export default function Home() {
         {isMenuOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 z-20">
             <nav className="fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-30">
-              <ul className="flex flex-col p-6 space-y-4 text-black">
+              <ul className="flex flex-col p-6 space-y-4 text-green-800">
                 <li>
                   <a
                     onClick={() => navigate("/")}
@@ -162,7 +162,7 @@ export default function Home() {
                 </li>
                 <li>
                   <button
-                    className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded"
+                    className="bg-green-800 hover:bg-green-700 text-white font-bold py-2 px-6 rounded"
                     onClick={() => navigate("/login")}
                   >
                     Login
@@ -170,7 +170,7 @@ export default function Home() {
                 </li>
               </ul>
               <button
-                className="absolute top-4 right-4 text-black hover:text-orange-500"
+                className="absolute top-4 right-4 text-green-800 hover:text-orange-500"
                 onClick={toggleMenu}
               >
                 <svg
@@ -203,22 +203,23 @@ export default function Home() {
           <div className="relative z-10 h-full flex items-center justify-center">
             <div className="container mx-auto px-4 text-center max-w-auto">
               <h2 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-4 leading-tight">
-                A Roasted Coffee For You
+                A Cup of Coffee for Everyone!
               </h2>
               <p className="text-gray-200 text-base sm:text-lg mb-6 max-w-2xl mx-auto text-center">
-                The coffee is brewed by first roasting green beans over hot
-                coals in a brazier—rich in tradition and taste.
+                Tara Kape is a coffee shop located in the heart of the city. We
+                offer a wide selection of coffee beans, teas, and other
+                beverages to satisfy your cravings.
               </p>
-              <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-10 rounded-lg transition duration-300 ease-in-out hover:scale-105 duration-100">
+              <button className="bg-white text-green-800 hover:bg-green-800 hover:text-white font-bold py-3 px-10 rounded-lg transition duration-300 ease-in-out hover:scale-105" onClick={() => navigate("/shop")}>
                 Shop Now
               </button>
             </div>
           </div>
         </section>
 
-        <div className="container mx-auto px-4 mb-10">
+        <div className="container mx-auto px-4 mb-10 mt-10">
           <div className="flex justify-center items-center py-6">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-green-800 text-center">
               Categories
             </h2>
           </div>
@@ -233,7 +234,7 @@ export default function Home() {
               <button
                 key={label}
                 onClick={() => navigate(path)}
-                className="flex-shrink-0 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-5 sm:px-6 rounded-full shadow-md hover:scale-105 transition-all duration-300 ease-in-out"
+                className="flex-shrink-0 bg-green-800 hover:bg-green-700 text-white font-semibold py-2 px-5 sm:px-6 rounded-full shadow-md hover:scale-105 transition-all duration-300 ease-in-out"
               >
                 {label}
               </button>
@@ -241,9 +242,9 @@ export default function Home() {
           </div>
         </div>
 
-        <section className="py-20 bg-white">
+        <section className="py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-green-100 to-green-800 mb-12">
+            <h2 className="text-4xl font-bold text-center bg-clip-text text-green-800 mb-12">
               Featured Products
             </h2>
 
@@ -251,12 +252,12 @@ export default function Home() {
               {[
                 {
                   id: 1,
-                  name: "Classic Brew",
+                  name: "Blonde Roast",
                   price: "$12.99",
                   description:
                     "A classic coffee with a smooth and creamy taste.",
                   image:
-                    "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+                    "src/assets/images/coffee.jpg",
                 },
                 {
                   id: 2,
@@ -265,7 +266,7 @@ export default function Home() {
                   description:
                     "A classic coffee with a smooth and creamy taste.",
                   image:
-                    "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=800&q=80",
+                    "src/assets/images/coffee.jpg",
                 },
                 {
                   id: 3,
@@ -274,7 +275,7 @@ export default function Home() {
                   description:
                     "A classic coffee with a smooth and creamy taste.",
                   image:
-                    "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+                    "src/assets/images/coffee.jpg",
                 },
                 {
                   id: 4,
@@ -283,7 +284,7 @@ export default function Home() {
                   description:
                     "A classic coffee with a smooth and creamy taste.",
                   image:
-                    "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+                    "src/assets/images/coffee.jpg",
                 },
                 {
                   id: 5,
@@ -292,7 +293,7 @@ export default function Home() {
                   description:
                     "A classic coffee with a smooth and creamy taste.",
                   image:
-                    "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+                    "src/assets/images/coffee.jpg",
                 },
                 {
                   id: 6,
@@ -301,7 +302,7 @@ export default function Home() {
                   description:
                     "A classic coffee with a smooth and creamy taste.",
                   image:
-                    "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=800&q=80",
+                    "src/assets/images/coffee.jpg",
                 },
                 {
                   id: 7,
@@ -310,7 +311,7 @@ export default function Home() {
                   description:
                     "A classic coffee with a smooth and creamy taste.",
                   image:
-                    "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+                    "src/assets/images/coffee.jpg",
                 },
                 {
                   id: 8,
@@ -319,26 +320,26 @@ export default function Home() {
                   description:
                     "A classic coffee with a smooth and creamy taste.",
                   image:
-                    "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+                    "src/assets/images/coffee.jpg",
                 },
               ].map((product) => (
                 <div
                   key={product.id}
-                  className="bg-white/30 backdrop-blur-md border border-white/10 shadow-lg rounded-lg overflow-hidden p-6 hover:scale-105 hover:shadow-2xl transition"
+                  className="bg-white/30 backdrop-blur-md border border-white/10 shadow-lg rounded-lg overflow-hidden p-6 hover:shadow-2xl transition"
                 >
                   <img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-60 object-cover rounded-xl mb-5"
                   />
-                  <h3 className="text-xl font-semibold text-green-600 mb-2">
+                  <h3 className="text-xl font-semibold text-green-800 mb-2">
                     {product.name}
                   </h3>
                   <p className="text-gray-500 mb-4 italic">
                     {product.description}
                   </p>
-                  <p className="text-gray-600 mb-4">{product.price}</p>
-                  <button className="bg-green-600 hover:bg-green-700 text-white py-2 px-5 rounded-md w-full font-semibold">
+                  <p className="text-green-800 mb-4">{product.price}</p>
+                  <button className="bg-green-800 hover:bg-green-700 text-white py-2 px-5 rounded-md w-full font-semibold">
                     Buy Now
                   </button>
                 </div>
@@ -362,7 +363,7 @@ export default function Home() {
             <p className="text-green-600 font-semibold mb-2 italic">
               World of Coffee
             </p>
-            <h2 className="text-4xl font-bold mb-4 text-gray-700">Our Story</h2>
+            <h2 className="text-4xl font-bold mb-4 text-green-800">Our Story</h2>
             <p className="text-gray-600 mb-6">
               Tara Kape is a small, family-owned coffee roaster based in
               <b> Bulacan, Philippines</b>. We believe that great coffee is a
@@ -371,14 +372,14 @@ export default function Home() {
               small farms around the world, and roast them in small batches to
               ensure that every cup is as fresh and flavorful as possible.
             </p>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600  mb-6">
               Our roasting philosophy is simple: we want to bring out the
               natural flavors of the beans, without adding any artificial
               flavorings or preservatives. We believe that this approach results
               in a more nuanced and complex cup of coffee, with a deeper flavor
               profile.
             </p>
-            <button className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-md transition duration-300 ease-in-out">
+            <button className="bg-green-800 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-md transition duration-300 ease-in-out">
               Read More
             </button>
           </div>
@@ -394,3 +395,4 @@ export default function Home() {
     </div>
   );
 }
+

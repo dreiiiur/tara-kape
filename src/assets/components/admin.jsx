@@ -1,195 +1,149 @@
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function Login() {
-    const navigate = useNavigate();
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+export default function AdminDashboard() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-    return (
-        <div
-            className="min-h-screen flex flex-col overflow-y-hidden"
-            style={{ overflowX: "hidden" }}
-        >
-            {/* Header */}
-      <header className="shadow-md bg-white">
-        <div className="container mx-auto flex justify-between items-center py-6 px-4">
+  return (
+    <div className="min-h-screen flex bg-gray-100">
+      {/* Sidebar */}
+      <aside className="w-64 bg-white shadow-md hidden md:block">
+        <div className="p-6 border-b">
           <h1 className="text-4xl font-bold text-black">
             <span className="italic font-serif">Tara</span>{" "}
             <span className="text-green-600">Kape</span>
           </h1>
-          <nav className="hidden md:block">
-            <div className="flex space-x-8 text-black">
-              {/* Desktop Navigation */}
-              <div className="flex items-center space-x-8">
-                <ul className="flex space-x-8">
-                  <li>
-                    <a
-                      onClick={() => navigate("/")}
-                      className="hover:text-green-600 cursor-pointer hover:underline"
-                    >
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      onClick={() => navigate("/")}
-                      className="hover:text-orange-500 cursor-pointer"
-                    >
-                      Shop
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      onClick={() => navigate("/")}
-                      className="hover:text-orange-500 cursor-pointer"
-                    >
-                      About
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      onClick={() => navigate("/")}
-                      className="hover:text-orange-500 cursor-pointer"
-                    >
-                      Contacts
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      onClick={() => navigate("/")}
-                      className="hover:text-orange-500 cursor-pointer"
-                    >
-                      Location
-                    </a>
-                  </li>
-                </ul>
-                <form className="flex-1">
-                  <div className="relative">
-                    <input
-                      type="search"
-                      className="w-full py-2 px-4 text-black bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-                      placeholder="Search..."
-                    />
-                    <button
-                      type="submit"
-                      className="absolute right-0 top-0 mt-2 mr-2"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-black"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </nav>
-          <button
-            className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded hidden md:block"
-            onClick={() => navigate("/login")}
-          >
-            Login
-          </button>
-          <button className="md:hidden" onClick={toggleMenu}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-black"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
         </div>
-
-        {isMenuOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 z-20">
-            <nav className="fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-30">
-              <ul className="flex flex-col p-6 space-y-4 text-black">
-                <li>
-                  <a
-                    onClick={() => navigate("/")}
-                    className="hover:text-orange-500 cursor-pointer"
-                  >
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    onClick={() => navigate("/about")}
-                    className="hover:text-orange-500 cursor-pointer"
-                  >
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a
-                    onClick={() => navigate("/shop")}
-                    className="hover:text-orange-500 cursor-pointer"
-                  >
-                    Shop
-                  </a>
-                </li>
-                <li>
-                  <a
-                    onClick={() => navigate("/contact")}
-                    className="hover:text-orange-500 cursor-pointer"
-                  >
-                    Contact
-                  </a>
-                </li>
-                <li>
-                  <button
-                    className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded"
-                    onClick={() => navigate("/login")}
-                  >
-                    Login
-                  </button>
-                </li>
-              </ul>
-              <button
-                className="absolute top-4 right-4 text-black hover:text-orange-500"
-                onClick={toggleMenu}
+        <nav className="p-4">
+          <ul className="space-y-4">
+            <li>
+              <a
+                onClick={() => navigate("/admin")}
+                className="block text-gray-700 font-semibold hover:bg-green-100 hover:text-green-600 py-2 px-4 rounded cursor-pointer"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a
+                onClick={() => navigate("/admin/products")}
+                className="block text-gray-700 font-semibold hover:bg-green-100 hover:text-green-600 py-2 px-4 rounded cursor-pointer"
+              >
+                Products
+              </a>
+            </li>
+            <li>
+              <a
+                onClick={() => navigate("/admin/orders")}
+                className="block text-gray-700 font-semibold hover:bg-green-100 hover:text-green-600 py-2 px-4 rounded cursor-pointer"
+              >
+                Orders
+              </a>
+            </li>
+            <li>
+              <a
+                onClick={() => navigate("/admin/profile")}
+                className="block text-gray-700 font-semibold hover:bg-green-100 hover:text-green-600 py-2 px-4 rounded cursor-pointer"
+              >
+                My Profile
+              </a>
+            </li>
+            <li>
+              <button
+                onClick={() => {
+                  localStorage.removeItem("admin");
+                  navigate("/login");
+                }}
+                className="block text-gray-700 font-semibold hover:bg-red-500 hover:text-white py-2 px-4 rounded cursor-pointer w-full text-left"
+              >
+                Log out
               </button>
-            </nav>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      {/* Main content */}
+      <div className="flex-1 flex flex-col">
+        {/* Header */}
+        <header className="bg-white shadow-md px-6 py-4 flex justify-between items-center">
+          <h2 className="text-xl font-semibold text-gray-800">Admin Dashboard</h2>
+          <button
+            onClick={toggleMenu}
+            className="md:hidden text-green-600 font-semibold"
+          >
+            {isMenuOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </header>
+
+        {/* Mobile Sidebar */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-white p-4 shadow-md">
+            <ul className="space-y-4">
+            <li>
+              <a
+                onClick={() => navigate("/admin")}
+                className="block text-gray-700 font-semibold hover:bg-green-100 hover:text-green-600 py-2 px-4 rounded cursor-pointer"
+              >
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a
+                onClick={() => navigate("/admin/products")}
+                className="block text-gray-700 font-semibold hover:bg-green-100 hover:text-green-600 py-2 px-4 rounded cursor-pointer"
+              >
+                Products
+              </a>
+            </li>
+            <li>
+              <a
+                onClick={() => navigate("/admin/orders")}
+                className="block text-gray-700 font-semibold hover:bg-green-100 hover:text-green-600 py-2 px-4 rounded cursor-pointer"
+              >
+                Orders
+              </a>
+            </li>
+            <li>
+              <button
+                onClick={() => {
+                  localStorage.removeItem("admin");
+                  navigate("/login");
+                }}
+                className="block text-gray-700 font-semibold hover:bg-red-500 hover:text-white py-2 px-4 rounded cursor-pointer w-full text-left"
+              >
+                Log out
+              </button>
+            </li>
+          </ul>
           </div>
         )}
-      </header>
-        </div>
-    );
+
+        {/* Dashboard Content */}
+        <main className="flex-1 p-6">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+              Welcome, Admin!
+            </h3>
+            <p className="text-gray-600">
+              Use the navigation to manage products, orders, and more.
+            </p>
+          </div>
+        </main>
+      </div>
+    </div>
+  );
 }
