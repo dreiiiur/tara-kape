@@ -1,7 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
+//import app from './firebase';
 
 export default function Login() {
+  // const [data, setData] = useState([]);
+  // const db = getFirestore(app);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const querySnapshot = await getDocs(collection(db, "your_collection_name"));
+  //     const newData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  //     setData(newData);
+  //   }
+  //   fetchData();
+  // }, []);
+
     const navigate = useNavigate();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
