@@ -10,213 +10,139 @@ export default function Home() {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
- 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-
-    <div
-      className="min-h-screen flex flex-col overflow-y-hidden"
-      style={{ overflowX: "hidden" }}
-    >
-    
-      {/* Main Content */}
+    <div className="min-h-screen flex flex-col bg-[#FAFAFA] text-gray-800">
       <main className="flex-grow">
-        <section
-          className="relative bg-cover bg-center h-[100vh]"
-          style={{ backgroundImage: `url(${heroImg})` }}
-        >
-          <div className="absolute inset-0 bg-black/60 z-0"></div>
-          <div className="relative z-10 h-full flex items-center justify-center">
-            <div className="container mx-auto px-4 text-center max-w-auto">
-              <h2 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-4 leading-tight">
-                A Cup of Coffee for Everyone!
-              </h2>
-              <p className="text-gray-200 text-base sm:text-lg mb-6 max-w-2xl mx-auto text-center">
-                Tara Kape is a coffee shop located in the heart of the city. We
-                offer a wide selection of coffee beans, teas, and other
-                beverages to satisfy your cravings.
+        {/* Hero Section */}
+        <section className="relative bg-white overflow-hidden shadow-sm">
+          <div className="absolute inset-0 bg-black">
+            <img
+              src={heroImg}
+              alt="Hero Background"
+              className="w-full h-full object-cover opacity-50"
+            />
+          </div>
+          <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 lg:py-32 flex flex-col lg:flex-row items-center gap-16">
+            <div className="flex-1 text-center lg:text-left">
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                A Cup of Coffee for Everyone
+              </h1>
+              <p className="text-lg text-gray-200 mb-8 max-w-xl">
+                Discover Tara Kape – premium beans, hand-crafted brews, and exceptional taste.
               </p>
-              <button className="bg-white text-green-800 hover:bg-green-800 hover:text-white font-bold py-3 px-10 rounded-lg transition duration-300 ease-in-out hover:scale-105" onClick={() => navigate("/shop")}>
-                Shop Now
-              </button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <button
+                  onClick={() => navigate("/shop")}
+                  className="bg-white text-green-800 px-6 py-3 rounded-md text-base font-medium hover:shadow-sm transition duration-300"
+                >
+                  Order Now
+                </button>
+                <button
+                  onClick={() => navigate("/about")}
+                  className="border border-white px-6 py-3 rounded-md text-base text-white font-medium hover:shadow-sm transition"
+                >
+                  Learn More
+                </button>
+              </div>
             </div>
+            <div className="flex-1 relative">
+              <img
+                src="src/assets/images/hero-coffee.png"
+                alt="Premium Coffee Package"
+                className="w-11/12 max-w-md mx-auto rounded-xl"
+              />
+            </div>
+          </div>
+          <div className="bg-[#222] text-white py-3 text-center text-xs tracking-wider uppercase font-semibold">
+            Artisan Roasts ★ Fresh Beans ★ Sustainable Sourcing
           </div>
         </section>
 
-        <div className="container mx-auto px-4 mb-10 mt-10">
-          <div className="flex justify-center items-center py-6">
-            <h2 className="text-3xl sm:text-4xl font-bold text-green-800 text-center">
-              Categories
-            </h2>
+        {/* Categories */}
+        <section className="py-20">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-semibold text-gray-900 mb-3">Categories</h2>
+            <p className="text-gray-500 max-w-xl mx-auto">
+              Browse coffee types & find your favorite blend.
+            </p>
           </div>
-          <div className="flex justify-center gap-4 px-2 sm:px-0 pb-4 sm:pb-0">
-            {[
-              { label: "Cold Brew", path: "/ColdBrew" },
-              { label: "Espresso", path: "/Espresso" },
-              { label: "Hot Brew", path: "/HotBrew" },
-              { label: "Frappe", path: "/Frappe" },
-              { label: "Pastries", path: "/Pastries" },
-            ].map(({ label, path }) => (
+          <div className="flex flex-wrap justify-center gap-4">
+            {[{ label: "Cold Brew", path: "/ColdBrew", icon: "🥶" },
+              { label: "Espresso", path: "/Espresso", icon: "☕" },
+              { label: "Hot Brew", path: "/HotBrew", icon: "🔥" },
+              { label: "Frappe", path: "/Frappe", icon: "🧊" },
+              { label: "Pastries", path: "/Pastries", icon: "🥐" }].map(({ label, path, icon }) => (
               <button
                 key={label}
                 onClick={() => navigate(path)}
-                className="flex-shrink-0 bg-green-800 hover:bg-green-700 text-white font-semibold py-2 px-5 sm:px-6 rounded-full shadow-md hover:scale-105 transition-all duration-300 ease-in-out"
+                className="flex items-center gap-2 px-6 py-3 bg-white border border-gray-300 rounded-full shadow-sm hover:shadow transition text-gray-700"
               >
-                {label}
+                <span>{icon}</span>
+                <span className="font-medium">{label}</span>
               </button>
             ))}
           </div>
-        </div>
+        </section>
 
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center bg-clip-text text-green-800 mb-12">
-              Featured Products
-            </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {[
-                {
-                  id: 1,
-                  name: "Blonde Roast",
-                  price: "$12.99",
-                  description:
-                    "A classic coffee with a smooth and creamy taste.",
-                  image:
-                    "src/assets/images/coffee.jpg",
-                },
-                {
-                  id: 2,
-                  name: "Espresso Roast",
-                  price: "$14.49",
-                  description:
-                    "A classic coffee with a smooth and creamy taste.",
-                  image:
-                    "src/assets/images/coffee.jpg",
-                },
-                {
-                  id: 3,
-                  name: "Cold Brew Blend",
-                  price: "$11.75",
-                  description:
-                    "A classic coffee with a smooth and creamy taste.",
-                  image:
-                    "src/assets/images/coffee.jpg",
-                },
-                {
-                  id: 4,
-                  name: "Cold Brew Blend",
-                  price: "$11.75",
-                  description:
-                    "A classic coffee with a smooth and creamy taste.",
-                  image:
-                    "src/assets/images/coffee.jpg",
-                },
-                {
-                  id: 5,
-                  name: "Classic Brew",
-                  price: "$12.99",
-                  description:
-                    "A classic coffee with a smooth and creamy taste.",
-                  image:
-                    "src/assets/images/coffee.jpg",
-                },
-                {
-                  id: 6,
-                  name: "Espresso Roast",
-                  price: "$14.49",
-                  description:
-                    "A classic coffee with a smooth and creamy taste.",
-                  image:
-                    "src/assets/images/coffee.jpg",
-                },
-                {
-                  id: 7,
-                  name: "Cold Brew Blend",
-                  price: "$11.75",
-                  description:
-                    "A classic coffee with a smooth and creamy taste.",
-                  image:
-                    "src/assets/images/coffee.jpg",
-                },
-                {
-                  id: 8,
-                  name: "Cold Brew Blend",
-                  price: "$11.75",
-                  description:
-                    "A classic coffee with a smooth and creamy taste.",
-                  image:
-                    "src/assets/images/coffee.jpg",
-                },
-              ].map((product) => (
-                <div
-                  key={product.id}
-                  className="bg-white/30 backdrop-blur-md border border-white/10 shadow-lg rounded-lg overflow-hidden p-6 hover:shadow-2xl transition"
-                >
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-60 object-cover rounded-xl mb-5"
-                  />
-                  <h3 className="text-xl font-semibold text-green-800 mb-2">
-                    {product.name}
-                  </h3>
-                  <p className="text-gray-500 mb-4 italic">
-                    {product.description}
-                  </p>
-                  <p className="text-green-800 mb-4">{product.price}</p>
-                  <button className="bg-green-800 hover:bg-green-700 text-white py-2 px-5 rounded-md w-full font-semibold">
-                    Buy Now
+        {/* Featured Products */}
+        <section className="py-20 bg-gray-50">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-semibold text-gray-900 mb-3">Top Picks</h2>
+            <p className="text-gray-500 max-w-xl mx-auto">
+              Handcrafted favorites curated just for you.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
+            {[{ id: 1, name: "Blonde Roast", price: "$12.99", rating: 4.5, description: "Smooth and creamy roast with a light flavor.", image: "src/assets/images/coffee.jpg" },
+              { id: 2, name: "Espresso Roast", price: "$14.49", rating: 4.8, description: "Bold, rich, and deeply satisfying espresso.", image: "src/assets/images/coffee.jpg" },
+              { id: 3, name: "Cold Brew Blend", price: "$11.75", rating: 4.6, description: "Chilled, refreshing brew with a mild kick.", image: "src/assets/images/coffee.jpg" },
+            { id: 3, name: "Cold Brew Blend", price: "$11.75", rating: 4.6, description: "Chilled, refreshing brew with a mild kick.", image: "src/assets/images/coffee.jpg" }].map((product) => (
+              <div key={product.id} className="bg-white rounded-lg shadow hover:shadow-md transition">
+                <img src={product.image} alt={product.name} className="w-full h-60 object-cover rounded-t-lg" />
+                <div className="p-5">
+                  <h3 className="text-xl font-semibold mb-1">{product.name}</h3>
+                  <p className="text-gray-500 text-sm mb-2">{product.description}</p>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-green-700 font-bold">{product.price}</span>
+                    <span className="text-yellow-500 text-sm">
+                      {"★".repeat(Math.floor(product.rating))} <span className="text-gray-400">{product.rating.toFixed(1)}</span>
+                    </span>
+                  </div>
+                  <button className="w-full bg-green-700 text-white py-2 rounded-md hover:bg-green-600 transition font-medium">
+                    Buy
                   </button>
                 </div>
-              ))}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* About / Story Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row-reverse items-center gap-12">
+            <div className="w-full md:w-1/2">
+              <img src={heroImg2} alt="About Us" className="w-full rounded-xl shadow" />
+            </div>
+            <div className="w-full md:w-1/2">
+              <p className="text-green-700 font-medium italic mb-2">World of Coffee</p>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Story</h2>
+              <p className="text-gray-600 mb-4">
+                Tara Kape is a small, family-owned coffee roaster based in <strong>Bulacan, Philippines</strong>. We believe that great coffee is a combination of high-quality beans, careful roasting, and a commitment to sustainability.
+              </p>
+              <p className="text-gray-600 mb-6">
+                Our roasting philosophy brings out the natural flavors of each bean, without artificial flavorings or preservatives — ensuring a rich, nuanced cup every time.
+              </p>
+              <button className="bg-green-800 text-white px-6 py-3 rounded-md hover:bg-green-700 transition font-medium">
+                Read More
+              </button>
             </div>
           </div>
         </section>
       </main>
-
-      {/* Website short description */}
-      <section className="py-20 bg-[#fefefe]">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row-reverse items-start">
-          <div className="w-full md:w-1/2 md:pl-8 max-h-1/2 md:max-h-full">
-            <img
-              src={heroImg2}
-              alt="About Us"
-              className="w-full h-1/4 md:h-1/2 object-cover rounded-lg"
-            />
-          </div>
-          <div className="w-full md:w-1/2 md:pr-8">
-            <p className="text-green-600 font-semibold mb-2 italic">
-              World of Coffee
-            </p>
-            <h2 className="text-4xl font-bold mb-4 text-green-800">Our Story</h2>
-            <p className="text-gray-600 mb-6">
-              Tara Kape is a small, family-owned coffee roaster based in
-              <b> Bulacan, Philippines</b>. We believe that great coffee is a
-              combination of high-quality beans, careful roasting, and a
-              commitment to sustainability. We source our beans from the best
-              small farms around the world, and roast them in small batches to
-              ensure that every cup is as fresh and flavorful as possible.
-            </p>
-            <p className="text-gray-600  mb-6">
-              Our roasting philosophy is simple: we want to bring out the
-              natural flavors of the beans, without adding any artificial
-              flavorings or preservatives. We believe that this approach results
-              in a more nuanced and complex cup of coffee, with a deeper flavor
-              profile.
-            </p>
-            <button className="bg-green-800 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-md transition duration-300 ease-in-out">
-              Read More
-            </button>
-          </div>
-        </div>
-      </section>
-
-      
     </div>
   );
 }
-
