@@ -10,6 +10,8 @@ export default function Home() {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const [sliderIndex, setSliderIndex] = useState(0);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -142,6 +144,60 @@ export default function Home() {
             </div>
           </div>
         </section>
+        
+        {/* Gallery Section */}
+<section className="py-20 bg-gray-100">
+  <div className="max-w-7xl mx-auto px-4">
+    <h2 className="text-4xl font-semibold text-gray-900 text-center mb-8">Photo Gallery</h2>
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      {[
+        "/src/assets/images/gall1.jpg",
+          "/src/assets/images/gall2.jpg",
+          "/src/assets/images/gall3.jpg"
+      ].map((src, index) => (
+        <div key={index} className="overflow-hidden rounded-xl shadow hover:scale-105 transition-transform duration-300">
+          <img src={src} alt={`Gallery ${index + 1}`} className="w-full h-60 object-cover" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+{/* Slider Section */}
+<section className="py-20 bg-white">
+  <div className="max-w-5xl mx-auto px-4">
+    <h2 className="text-4xl font-semibold text-gray-900 text-center mb-8">Experience the Brew</h2>
+    <div className="relative overflow-hidden">
+      <div className="flex gap-4 transition-transform duration-500" style={{ transform: `translateX(-${sliderIndex * 100}%)` }}>
+        {[
+          "/src/assets/images/gall1.jpg",
+          "/src/assets/images/gall2.jpg",
+          "/src/assets/images/gall3.jpg"
+        ].map((src, index) => (
+          <div key={index} className="min-w-full">
+            <img src={src} alt={`Slide ${index + 1}`} className="w-full h-96 object-cover rounded-xl shadow" />
+          </div>
+        ))}
+      </div>
+      <div className="absolute inset-0 flex justify-between items-center px-4">
+        <button
+          onClick={() => setSliderIndex((prev) => (prev === 0 ? 2 : prev - 1))}
+          className="bg-white bg-opacity-70 hover:bg-opacity-100 text-gray-700 px-3 py-2 rounded-full shadow"
+        >
+          ←
+        </button>
+        <button
+          onClick={() => setSliderIndex((prev) => (prev === 2 ? 0 : prev + 1))}
+          className="bg-white bg-opacity-70 hover:bg-opacity-100 text-gray-700 px-3 py-2 rounded-full shadow"
+        >
+          →
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+       
       </main>
     </div>
   );
