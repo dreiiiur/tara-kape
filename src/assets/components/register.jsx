@@ -5,7 +5,7 @@ import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { FaGoogle } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa6";
 
-export default function Login() {
+export default function Register() {
   // const [data, setData] = useState([]);
   // const db = getFirestore(app);
   // useEffect(() => {
@@ -51,9 +51,9 @@ export default function Login() {
           {/* Heading */}
           <div className="flex flex-col gap-3 mb-4">
             <h2 className="text-2xl font-bold text-start text-black">
-              Welcome Back
+              Create an Account
             </h2>
-            <p className=" text-gray-600">Please enter your credentials.</p>
+            <p className=" text-gray-600">Please enter your email below to create your account.</p>
           </div>
 
           {/*other options*/}
@@ -145,19 +145,19 @@ export default function Login() {
               onClick={loginButton}
               className="w-full bg-black hover:bg-gray-800 text-white font-semibold py-2 rounded-md transition duration-200"
             >
-              Sign In
+              Create Account
             </button>
           </form>
 
           {/* Register Link */}
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-600">
-              Don't have an account?{" "}
+              Account exists?{" "}
               <a
-                href="/register"
+                href="/login"
                 className="text-black hover:underline font-medium"
               >
-                Register
+                Log in
               </a>
             </p>
           </div>

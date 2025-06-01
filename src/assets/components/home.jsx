@@ -39,7 +39,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <button
                   onClick={() => navigate("/shop")}
-                  className="bg-white text-green-800 px-6 py-3 rounded-md text-base font-medium hover:shadow-sm transition duration-300"
+                  className="bg-orange-500 text-white  px-6 py-3 rounded-md text-base font-medium hover:shadow-sm transition duration-300"
                 >
                   Order Now
                 </button>
@@ -67,7 +67,7 @@ export default function Home() {
         {/* Categories */}
         <section className="py-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-semibold text-gray-900 mb-3">Categories</h2>
+            <h2 className="text-4xl font-semibold text-orange-500 mb-3">Categories</h2>
             <p className="text-gray-500 max-w-xl mx-auto">
               Browse coffee types & find your favorite blend.
             </p>
@@ -114,7 +114,7 @@ export default function Home() {
                       {"★".repeat(Math.floor(product.rating))} <span className="text-gray-400">{product.rating.toFixed(1)}</span>
                     </span>
                   </div>
-                  <button className="w-full bg-green-700 text-white py-2 rounded-md hover:bg-green-600 transition font-medium">
+                  <button className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition font-medium">
                     Buy
                   </button>
                 </div>
@@ -130,7 +130,7 @@ export default function Home() {
               <img src={heroImg2} alt="About Us" className="w-full rounded-xl shadow" />
             </div>
             <div className="w-full md:w-1/2">
-              <p className="text-green-700 font-medium italic mb-2">World of Coffee</p>
+              <p className="text-gray-700 font-medium italic mb-2">World of Coffee</p>
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Story</h2>
               <p className="text-gray-600 mb-4">
                 Tara Kape is a small, family-owned coffee roaster based in <strong>Bulacan, Philippines</strong>. We believe that great coffee is a combination of high-quality beans, careful roasting, and a commitment to sustainability.
@@ -138,7 +138,7 @@ export default function Home() {
               <p className="text-gray-600 mb-6">
                 Our roasting philosophy brings out the natural flavors of each bean, without artificial flavorings or preservatives — ensuring a rich, nuanced cup every time.
               </p>
-              <button className="bg-green-800 text-white px-6 py-3 rounded-md hover:bg-green-700 transition font-medium">
+              <button className="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition font-medium">
                 Read More
               </button>
             </div>

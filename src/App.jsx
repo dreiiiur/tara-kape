@@ -5,10 +5,18 @@ import Login from "./assets/components/login";
 import Shop from "./assets/components/shop";
 import Admin from "./assets/components/admin";
 import MainLayout from "./assets/components/mainlayout";
+import Register from "./assets/components/register";
+import About from "./assets/components/about";
+//import { ThemeProvider } from "./assets/components/themeprovider"
+
 
 const App = () => {
   return (
-    <Routes>
+    <>
+    {/* <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      {children}
+    </ThemeProvider> */}
+     <Routes>
       {/* Routes with Header + Footer */}
       <Route
         path="/"
@@ -34,10 +42,30 @@ const App = () => {
           </MainLayout>
         }
       />
+      <Route
+        path="/register"
+        element={
+          <MainLayout>
+            <Register />
+          </MainLayout>
+        }
+      />
+      <Route
+        path="/about"
+        element={
+          <MainLayout>
+            <About />
+          </MainLayout>
+        }
+      />
 
       {/* Admin route without Header/Footer */}
       <Route path="/admin/*" element={<Admin />} />
     </Routes>
+    </>
+   
+    
+    
   );
 };
 

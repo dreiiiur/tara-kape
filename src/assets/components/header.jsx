@@ -9,21 +9,21 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-     <header className="shadow-md bg-white header">
+     <header className="shadow-md bg-white header sticky top-0">
     <div className="container mx-auto flex justify-between items-center py-6 px-4">
       <h1 className="text-4xl font-bold ">
         <span className="italic font-serif">Tara</span>{" "}
-        <span className="text-green-600">Kape</span>
+        <span className="text-orange-600">Kape</span>
       </h1>
       <nav className="hidden md:block">
-        <div className="flex space-x-8 text-green-800">
+        <div className="flex space-x-8">
           {/* Desktop Navigation */}
           <div className="flex items-center space-x-8">
             <ul className="flex space-x-8">
               <li>
                 <a
                   onClick={() => navigate("/")}
-                  className="hover:text-green-600 cursor-pointer hover:underline"
+                  className="hover:text-gray-700 cursor-pointer hover:underline"
                 >
                   Home
                 </a>
@@ -31,15 +31,15 @@ const Header = () => {
               <li>
                 <a
                   onClick={() => navigate("/shop")}
-                  className="hover:text-orange-500 cursor-pointer"
+                  className="hover:text-gray-700 cursor-pointer hover:underline"  
                 >
                   Shop
                 </a>
               </li>
               <li>
                 <a
-                  onClick={() => navigate("/")}
-                  className="hover:text-orange-500 cursor-pointer"
+                  onClick={() => navigate("/about")}
+                  className="hover:text-gray-700 cursor-pointer hover:underline"
                 >
                   About
                 </a>
@@ -47,7 +47,7 @@ const Header = () => {
               <li>
                 <a
                   onClick={() => navigate("/")}
-                  className="hover:text-orange-500 cursor-pointer"
+                  className="hover:text-gray-700 cursor-pointer hover:underline"
                 >
                   Contacts
                 </a>
@@ -55,7 +55,7 @@ const Header = () => {
               <li>
                 <a
                   onClick={() => navigate("/")}
-                  className="hover:text-orange-500 cursor-pointer"
+                  className="hover:text-gray-700 cursor-pointer hover:underline"
                 >
                   Location
                 </a>
@@ -65,7 +65,7 @@ const Header = () => {
               <div className="relative">
                 <input
                   type="search"
-                  className="w-full py-2 px-4 text-green-800 bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="w-full py-2 px-8 text-black bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
                   placeholder="Search..."
                 />
                 <button
@@ -93,7 +93,7 @@ const Header = () => {
         </div>
       </nav>
       <button
-        className="bg-green-800 hover:bg-green-700 text-white font-bold py-2 px-6 rounded hidden md:block"
+        className="bg-black hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full hidden md:block"
         onClick={() => navigate("/login")}
       >
         Login
