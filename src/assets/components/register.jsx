@@ -60,13 +60,13 @@ export default function Register() {
           <div className="flex flex-row gap-2 mb-4">
             <button
               type="button"
-              className="flex items-center w-full justify-center border border-gray-300 rounded-lg p-2 hover:bg-gray-100"
+              className="flex items-center w-full justify-center border border-gray-400 rounded-lg p-2 hover:bg-gray-100"
             >
               <FaGoogle className="mr-2" /> Google
             </button>
             <button
               type="button"
-              className="flex items-center justify-center w-full gap-2 border border-gray-300 rounded-lg p-2 hover:bg-gray-100 "
+              className="flex items-center justify-center w-full gap-2 border border-gray-400 rounded-lg p-2 hover:bg-gray-100 "
             >
               <FaFacebook className="mr-2"/> Facebook
             </button>
@@ -91,7 +91,7 @@ export default function Register() {
               <input
                 id="email"
                 type="email"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
                 placeholder="example@gmail.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -109,7 +109,7 @@ export default function Register() {
               <input
                 id="password"
                 type={showPassword ? "text" : "password"}
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 pr-10"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-500 pr-10"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />

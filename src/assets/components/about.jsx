@@ -53,7 +53,7 @@ export default function About() {
         </h2>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
           {/* Testimonial Card */}
-          <div className="bg-white border rounded-lg p-6 shadow-sm flex flex-col justify-between">
+          <div className="bg-white border border-black rounded-lg p-6 shadow-md flex flex-col justify-between">
             <p className="text-gray-700 mb-4">
               "I've been a regular customer of Tara Kape for years, and I can't
               recommend them enough. The coffee is always exceptional, and the
@@ -97,7 +97,7 @@ export default function About() {
           </div>
 
           {/* Testimonial Card */}
-          <div className="bg-white border rounded-lg p-6 shadow-sm flex flex-col justify-between">
+          <div className="bg-white border border-black  rounded-lg p-6 shadow-md flex flex-col justify-between">
             <p className="text-gray-700 mb-4">
               "I've been a regular customer of Tara Kape for years, and I can't
               recommend them enough. The coffee is always exceptional, and the
@@ -141,7 +141,7 @@ export default function About() {
           </div>
 
           {/* Testimonial Card */}
-          <div className="bg-white border rounded-lg p-6 shadow-sm flex flex-col justify-between">
+          <div className="bg-white border border-black rounded-lg p-6 shadow-md flex flex-col justify-between">
             <p className="text-gray-700 mb-4">
               "I've been a regular customer of Tara Kape for years, and I can't
               recommend them enough. The coffee is always exceptional, and the
@@ -182,6 +182,21 @@ export default function About() {
               </div>
             </div>
             <p className="text-xs text-gray-400 mt-2">23 Mar 2025</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Gallery */}
+      <div className="flex items-center justify-center p-5">
+        <div className="w-full max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-2xl lg:text-3xl font-bold mb-4 text-center capitalize text-gray-700">What our <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-300 to-orange-500">shop</span> looks like.</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {/* First Item */}
+            <img src="src/assets/images/gall1.jpg" alt="Gallery Image" className="w-full h-full object-cover rounded-lg" />
+            {/* Second Item */}
+            <img src="src/assets/images/gall2.jpg" alt="Gallery Image" className="w-full h-full object-cover rounded-lg" />
+            {/* Third Item */}
+            <img src="src/assets/images/gall3.jpg" alt="Gallery Image" className="w-full h-full object-cover rounded-lg" />
           </div>
         </div>
       </div>

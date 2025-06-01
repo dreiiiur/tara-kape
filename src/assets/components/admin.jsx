@@ -4,7 +4,9 @@ import {
   MdOutlineSpaceDashboard,
   MdOutlineInventory2,
   MdPayment,
+  
 } from "react-icons/md";
+import { FaChartBar } from "react-icons/fa";
 import { PiUsersThreeFill } from "react-icons/pi";
 import { BiCoffeeTogo } from "react-icons/bi";
 import { TbLogout } from "react-icons/tb";
@@ -31,7 +33,7 @@ export default function AdminDashboard() {
         <div className="p-6 border-b">
           <h1 className="text-3xl font-bold text-black">
             <span className="italic font-serif">Tara</span>{" "}
-            <span className="text-green-600">Kape</span>
+            <span className="text-orange-500">Kape</span>
           </h1>
         </div>
 
@@ -47,7 +49,7 @@ export default function AdminDashboard() {
               <li key={text}>
                 <a
                   onClick={() => navigate("/admin")}
-                  className="w-full text-gray-700 hover:bg-green-100 hover:text-green-600 hover:rounded-full py-2 px-4 cursor-pointer flex items-center"
+                  className="w-full text-gray-700 hover:bg-orange-100 hover:text-orange-500 hover:rounded-full py-2 px-4 cursor-pointer flex items-center"
                 >
                   <Icon className="mr-2" />
                   {text}
@@ -179,9 +181,9 @@ export default function AdminDashboard() {
 
           {/* Sales Analytics */}
           <div className="bg-white p-6 rounded-2xl shadow-md">
-            <h4 className="text-xl font-bold text-green-800 mb-4 flex items-center">
-              <MdOutlineSpaceDashboard
-                className="text-green-600 mr-2"
+            <h4 className="text-xl font-bold  mb-4 flex items-center">
+              <FaChartBar 
+                className="text-orange-500 mr-2"
                 size={24}
               />
               Sales Analytics

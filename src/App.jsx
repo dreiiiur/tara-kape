@@ -7,6 +7,8 @@ import Admin from "./assets/components/admin";
 import MainLayout from "./assets/components/mainlayout";
 import Register from "./assets/components/register";
 import About from "./assets/components/about";
+import Maps from "./assets/components/map";
+import Location from "./assets/components/location";
 //import { ThemeProvider } from "./assets/components/themeprovider"
 
 
@@ -16,6 +18,28 @@ const App = () => {
     {/* <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       {children}
     </ThemeProvider> */}
+  
+    <Routes>
+      <Route
+        path="/map"
+        element={
+          <MainLayout>
+            <Maps />
+          </MainLayout>
+        }
+      />
+    </Routes>
+
+    <Routes>
+      <Route
+        path="/location"
+        element={
+          <MainLayout>
+            <Location />
+          </MainLayout>
+        }
+      />
+    </Routes>
      <Routes>
       {/* Routes with Header + Footer */}
       <Route

@@ -54,7 +54,7 @@ const Header = () => {
               </li>
               <li>
                 <a
-                  onClick={() => navigate("/")}
+                  onClick={() => navigate("/location")}
                   className="hover:text-gray-700 cursor-pointer hover:underline"
                 >
                   Location

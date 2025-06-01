@@ -53,20 +53,20 @@ export default function Login() {
             <h2 className="text-2xl font-bold text-start text-black">
               Welcome Back
             </h2>
-            <p className=" text-gray-600">Please enter your credentials.</p>
+            <p className=" text-gray-600">Please enter your credentials for you to log in.</p>
           </div>
 
           {/*other options*/}
           <div className="flex flex-row gap-2 mb-4">
             <button
               type="button"
-              className="flex items-center w-full justify-center border border-gray-300 rounded-lg p-2 hover:bg-gray-100"
+              className="flex items-center w-full justify-center border border-gray-400 rounded-lg p-2 hover:bg-gray-100"
             >
               <FaGoogle className="mr-2" /> Google
             </button>
             <button
               type="button"
-              className="flex items-center justify-center w-full gap-2 border border-gray-300 rounded-lg p-2 hover:bg-gray-100 "
+              className="flex items-center justify-center w-full gap-2 border border-gray-400 rounded-lg p-2 hover:bg-gray-100 "
             >
               <FaFacebook className="mr-2"/> Facebook
             </button>
@@ -91,7 +91,7 @@ export default function Login() {
               <input
                 id="email"
                 type="email"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
                 placeholder="example@gmail.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -109,7 +109,7 @@ export default function Login() {
               <input
                 id="password"
                 type={showPassword ? "text" : "password"}
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 pr-10"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-500 pr-10"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
