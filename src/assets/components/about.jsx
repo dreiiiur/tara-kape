@@ -10,7 +10,7 @@ export default function About() {
   };
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 px-4">
       {/* Heading */}
       <div className="text-center mt-16 max-w-5xl mx-auto ">
         <h1 className="text-4xl font-bold text-gray-800 capitalize max-w-5xl mx-auto md:text-2xl sm:text-3xl lg:text-4xl">
@@ -30,12 +30,12 @@ export default function About() {
         </p>
 
         <div className="flex justify-center mt-8 gap-4">
-          <button className="bg-black hover:bg-gray-800 text-white py-3 px-6 rounded-full font-semibold hover:transition ease-in-out duration-300">
+          <button className="bg-orange-600 hover:bg-orange-500 text-white py-3 px-6 rounded-full font-semibold hover:transition ease-in-out duration-300">
             <a onClick={() => navigate("/shop")} className="cursor-pointer ">
               Shop Now
             </a>
           </button>
-          <button className="border-2 font-semibold border-orange-500 hover:bg-orange-500 hover:text-white text-orange-500 py-3 px-6 rounded-full hover:transition ease-in-out duration-300  ">
+          <button className="border-2 font-semibold border-orange-600 hover:bg-orange-500 hover:text-white text-orange-600 py-3 px-6 rounded-full hover:transition ease-in-out duration-300  ">
             <a onClick={() => navigate("/shop")} className="cursor-pointer ">
               Contact Us
             </a>
@@ -47,13 +47,13 @@ export default function About() {
         <h2 className="text-3xl font-bold text-gray-800 text-center">
           Don’t take our word for it.
           <br />{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600">
+          <span className="bg-clip-text text-transparent bg-orange-600">
             Trust our customers
           </span>
         </h2>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
           {/* Testimonial Card */}
-          <div className="bg-white border border-black rounded-lg p-6 shadow-md flex flex-col justify-between">
+          <div className="bg-white border border-orange-600 rounded-lg p-6 shadow-md flex flex-col justify-between">
             <p className="text-gray-700 mb-4">
               "I've been a regular customer of Tara Kape for years, and I can't
               recommend them enough. The coffee is always exceptional, and the
@@ -97,7 +97,7 @@ export default function About() {
           </div>
 
           {/* Testimonial Card */}
-          <div className="bg-white border border-black  rounded-lg p-6 shadow-md flex flex-col justify-between">
+          <div className="bg-white border border-orange-600  rounded-lg p-6 shadow-md flex flex-col justify-between">
             <p className="text-gray-700 mb-4">
               "I've been a regular customer of Tara Kape for years, and I can't
               recommend them enough. The coffee is always exceptional, and the
@@ -141,7 +141,7 @@ export default function About() {
           </div>
 
           {/* Testimonial Card */}
-          <div className="bg-white border border-black rounded-lg p-6 shadow-md flex flex-col justify-between">
+          <div className="bg-white border border-orange-600 rounded-lg p-6 shadow-md flex flex-col justify-between">
             <p className="text-gray-700 mb-4">
               "I've been a regular customer of Tara Kape for years, and I can't
               recommend them enough. The coffee is always exceptional, and the
@@ -189,7 +189,7 @@ export default function About() {
       {/* Gallery */}
       <div className="flex items-center justify-center p-5">
         <div className="w-full max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-2xl lg:text-3xl font-bold mb-4 text-center capitalize text-gray-700">What our <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-300 to-orange-500">shop</span> looks like.</h2>
+          <h2 className="text-3xl md:text-2xl lg:text-3xl font-bold mb-4 text-center capitalize text-gray-700">What our <span className="bg-clip-text text-transparent bg-orange-600">shop</span> looks like.</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {/* First Item */}
             <img src="src/assets/images/gall1.jpg" alt="Gallery Image" className="w-full h-full object-cover rounded-lg" />

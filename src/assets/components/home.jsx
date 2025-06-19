@@ -18,6 +18,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FAFAFA] text-gray-800">
+      <head>
+        <title>Tara Kape | Home</title>
+      </head>
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="relative bg-white overflow-hidden shadow-sm">
@@ -114,7 +117,7 @@ export default function Home() {
                       {"★".repeat(Math.floor(product.rating))} <span className="text-gray-400">{product.rating.toFixed(1)}</span>
                     </span>
                   </div>
-                  <button className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition font-medium">
+                  <button className="w-full bg-orange-600 text-white py-2 rounded-md hover:bg-orange-500 transition font-medium">
                     Buy
                   </button>
                 </div>
@@ -130,7 +133,7 @@ export default function Home() {
               <img src={heroImg2} alt="About Us" className="w-full rounded-xl shadow" />
             </div>
             <div className="w-full md:w-1/2">
-              <p className="text-gray-700 font-medium italic mb-2">World of Coffee</p>
+              <p className="text-orange-600 font-medium italic mb-2">World of Coffee</p>
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Story</h2>
               <p className="text-gray-600 mb-4">
                 Tara Kape is a small, family-owned coffee roaster based in <strong>Bulacan, Philippines</strong>. We believe that great coffee is a combination of high-quality beans, careful roasting, and a commitment to sustainability.
@@ -138,7 +141,7 @@ export default function Home() {
               <p className="text-gray-600 mb-6">
                 Our roasting philosophy brings out the natural flavors of each bean, without artificial flavorings or preservatives — ensuring a rich, nuanced cup every time.
               </p>
-              <button className="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition font-medium">
+              <button className="bg-orange-600 text-white px-6 py-3 rounded-md hover:bg-orange-500 transition font-medium">
                 Read More
               </button>
             </div>

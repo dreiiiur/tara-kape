@@ -4,3 +4,7 @@
 webkit-scrollbar {
     display: none;
 }
+*{
+    font-family: 'Passion One', cursive;
+    padding: 10px;
+}

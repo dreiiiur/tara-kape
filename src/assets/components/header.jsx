@@ -93,7 +93,7 @@ const Header = () => {
         </div>
       </nav>
       <button
-        className="bg-black hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full hidden md:block"
+        className="bg-orange-600 hover:bg-orange-500 text-white font-bold py-2 px-6 rounded-full hidden md:block"
         onClick={() => navigate("/login")}
       >
         Login
